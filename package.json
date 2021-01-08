@@ -1,0 +1,15 @@
+{
+  "name": "autocode-puppeteer",
+  "version": "1.0.0-rc",
+  "description": "Puppeteer for use in Autocode services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Lee <jacob@autocode.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chrome-aws-lambda": "^5.5.0",
+    "puppeteer-core": "^5.5.0"
+  }
+}
