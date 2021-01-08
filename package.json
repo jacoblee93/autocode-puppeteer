@@ -1,6 +1,6 @@
 {
   "name": "autocode-puppeteer",
-  "version": "1.0.0-rc",
+  "version": "1.0.0",
   "description": "Puppeteer for use in Autocode services",
   "main": "index.js",
   "scripts": {
