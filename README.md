@@ -32,4 +32,4 @@ module.exports = async (context) => {
 };
 ```
 
-For more usage information, see the examples in the [Puppeteer](https://github.com/puppeteer/puppeteer) or [chrome-aws-lambda repo README](https://github.com/alixaxel/chrome-aws-lambda).
+For more usage information, see the examples in the [Puppeteer repo](https://github.com/puppeteer/puppeteer).
