@@ -1,6 +1,6 @@
 {
   "name": "autocode-puppeteer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Puppeteer for use in Autocode services",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   "author": "Jacob Lee",
   "license": "MIT",
   "dependencies": {
-    "chrome-aws-lambda": "^5.5.0",
-    "puppeteer-core": "^5.5.0"
+    "chrome-aws-lambda": "5.5.0",
+    "puppeteer-core": "5.5.0"
   },
   "repository": {
     "type": "git",

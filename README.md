@@ -1,11 +1,13 @@
 # Autocode Puppeteer
 
-Allows use of [Puppeteer](https://pptr.dev/) in [Autocode](https://autocode.com) services. Combines the [puppeteer-core](https://www.npmjs.com/package/puppeteer-core) and [chrome-aws-lambda](https://www.npmjs.com/package/chrome-aws-lambda) packages and uses the same API and methods.
+Allows use of [Puppeteer](https://pptr.dev/) in [Autocode](https://autocode.com) services. Combines the [puppeteer-core](https://www.npmjs.com/package/puppeteer-core) and [chrome-aws-lambda](https://www.npmjs.com/package/chrome-aws-lambda) packages.
 
 # Usage
 
+Certain arguments to `puppeteer.launch` are restricted. The package will throw an error if you attempt to pass `args`, `executablePath`, or `headless` as an option into the `launch` method.
+
 ```
-const chromium = require('autocode-puppeteer');
+const puppeteer = require('autocode-puppeteer');
 
 module.exports = async (context) => {
 
@@ -13,22 +15,16 @@ module.exports = async (context) => {
   let browser;
 
   try {
-    browser = await chromium.puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: chromium.headless,
-      ignoreHTTPSErrors: true,
-    });
+    browser = await puppeteer.launch();
     let page = await browser.newPage();
     await page.goto(context.params.url || 'https://example.com');
     result = await page.title();
+    await browser.close();
   } catch (error) {
-    throw error;
-  } finally {
-    if (browser !== null) {
+    if (!!browser) {
       await browser.close();
     }
+    throw error;
   }
 
   return result;
